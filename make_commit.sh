@@ -5,8 +5,7 @@ file="fraudulent_commits.txt"
 
 touch $file
 
-# random=$((1 + RANDOM % 20))
-random=1
+random=$((1 + RANDOM % 20))
 
 if [ $random -eq 1 ]; then
   echo $((`cat $file` + 1)) > $file
