@@ -1,16 +1,25 @@
 #!/bin/bash
 
+# move into the repo directory
 cd "$HOME/dev/soproductive/"
-file="fraudulent_commits.txt"
+commits="commits.txt"
+src="src.c"
+target="target.c"
 
-touch $file
+touch $commits
+touch $target
 
-random=$((1 + RANDOM % 20))
+# Roll for a 1/100 chance
+random=$((1 + RANDOM % 100))
 
 if [ $random -eq 1 ]; then
-  echo $((`cat $file` + 1)) > $file
+  # increment the commits counter file
+  echo $((`cat $commits` + 1)) > $commits
+  num=`cat $commits`
+  # copy the corresponding line from src to target
+  sed -n "${num}p" src.c >> target.c
 fi  
 
-git add $file
-git commit -m "being productive"
+git add $target
+git commit -m "added comments;"
 git push
