@@ -10,7 +10,7 @@ touch $commits
 touch $target
 
 # Roll for a 1/100 chance
-random=$((1 + RANDOM % 100))
+random=$((RANDOM % 100))
 
 if [ $random -eq 1 ]; then
   # increment the commits counter file
@@ -18,8 +18,9 @@ if [ $random -eq 1 ]; then
   num=`cat $commits`
   # copy the corresponding line from src to target
   sed -n "${num}p" src.c >> target.c
-fi  
 
-git add $target
-git commit -m "added comments;"
-git push
+  # push to git
+  git add $target
+  git commit -m "added comments;"
+  git push
+fi  
