@@ -9,6 +9,8 @@ target="target.c"
 touch $commits
 touch $target
 
+git pull
+
 # Roll for a 1/100 chance
 random=$((RANDOM % 100))
 
