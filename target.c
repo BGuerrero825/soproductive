@@ -26,3 +26,4 @@ I shall depart for the latter town in a fortnight or three weeks; and my intenti
 Farewell, my dear, excellent Margaret. Heaven shower down blessings on you, and save me, that I may again and again testify my gratitude for all your love and kindness.
 
 Your affectionate brother,
+R. Walton
